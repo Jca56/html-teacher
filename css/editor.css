@@ -1,0 +1,172 @@
+/* ============================================
+   Live Code Editor Styles
+   ============================================ */
+
+/* --- Editor Container --- */
+.editor-container {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+/* --- Editor Tab Bar --- */
+.editor-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--gold-border);
+  background: rgba(20, 16, 12, 0.5);
+}
+
+.editor-tab {
+  flex: 1;
+  padding: 10px 0;
+  text-align: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-bottom: 2px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.editor-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.editor-tab:hover:not(.active) { color: var(--text-secondary); }
+
+/* --- Code Input --- */
+.editor-pane {
+  display: none;
+  position: relative;
+}
+
+.editor-pane.active { display: block; }
+
+.editor-pane textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 12px;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border: none;
+  resize: vertical;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.5;
+  tab-size: 2;
+  outline: none;
+}
+
+.editor-pane textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.editor-pane textarea:focus {
+  box-shadow: inset 0 0 0 1px var(--gold-border);
+}
+
+/* --- Preview Pane --- */
+.editor-preview {
+  display: none;
+  background: #fff;
+  min-height: 180px;
+  border-radius: 0;
+}
+
+.editor-preview.active { display: block; }
+
+.editor-preview iframe {
+  width: 100%;
+  min-height: 180px;
+  border: none;
+  display: block;
+}
+
+/* --- Editor Toolbar --- */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(20, 16, 12, 0.5);
+  border-top: 1px solid var(--gold-border);
+}
+
+.editor-toolbar button {
+  background: none;
+  border: 1px solid var(--gold-border);
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.editor-toolbar button:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: var(--gold-glow);
+}
+
+/* --- Split View (wider screens) --- */
+@media (min-width: 768px) {
+  .editor-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .editor-split .editor-pane,
+  .editor-split .editor-preview {
+    display: block !important;
+  }
+
+  .editor-split .editor-pane textarea {
+    min-height: 280px;
+    border-right: 1px solid var(--gold-border);
+  }
+
+  .editor-split .editor-preview iframe { min-height: 280px; }
+
+  .editor-split .editor-tabs .tab-preview { display: none; }
+}
+
+/* --- Line Numbers (visual cue) --- */
+.editor-pane textarea {
+  counter-reset: line;
+  padding-left: 16px;
+}
+
+/* --- Target Preview (for challenges) --- */
+.target-preview {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.target-preview-label {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--gold-dim);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(20, 16, 12, 0.5);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.target-preview iframe {
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  display: block;
+  background: #fff;
+}

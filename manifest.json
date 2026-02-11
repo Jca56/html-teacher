@@ -1,0 +1,22 @@
+{
+  "name": "Lantern Labs — HTML & CSS Teacher",
+  "short_name": "HTML Teacher",
+  "description": "Learn HTML & CSS from scratch with interactive lessons, a live code editor, and cheat sheets.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1a1410",
+  "theme_color": "#d4a843",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
